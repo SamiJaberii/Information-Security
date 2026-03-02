@@ -1,1 +1,10 @@
 New text
+
+New commands: 
+
+-:set number Show line numbers.
+-:set nonumber Hide line numbers.
+-yy Copy (yank) current line.
+-gg Go to the beginning of the file.
+-$ Go to end of line.
+-0 Go to beginning of line.
