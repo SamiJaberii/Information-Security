@@ -1,0 +1,38 @@
+Last login: Tue Mar  3 01:01:28 on ttys000
+You have new mail.
+samijabery@Samis-MacBook-Pro Lab-13 % source venv/bin/activate
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % cat > sample_log.txt << 'EOF'
+testing
+my
+name
+is
+sami
+EOF
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % pip install requests
+Collecting requests
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.4.4-cp314-cp314-macosx_10_13_universal2.whl.metadata (37 kB)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.14/site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.14/site-packages (from requests) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.14/site-packages (from requests) (2026.2.25)
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.4-cp314-cp314-macosx_10_13_universal2.whl (207 kB)
+Installing collected packages: charset_normalizer, requests
+Successfully installed charset_normalizer-3.4.4 requests-2.32.5
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % vim upload_client.py
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % python3 upload_client.py
+Status: 200
+Response: {'saved_as': 'uploads/20260303_010430_sample_log.txt', 'bytes': 24}
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % ls -la uploads
+total 8
+drwxr-xr-x  3 samijabery  staff   96 Mar  3 01:04 .
+drwxr-xr-x  8 samijabery  staff  256 Mar  3 01:04 ..
+-rw-r--r--  1 samijabery  staff   24 Mar  3 01:04 20260303_010430_sample_log.txt
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % cat uploads/20260303_010430_sample_log.txt
+testing
+my
+name
+is
+sami
+(venv) samijabery@Samis-MacBook-Pro Lab-13 % 
