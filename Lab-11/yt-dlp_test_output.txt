@@ -1,0 +1,38 @@
+samijabery@Samis-MacBook-Pro neofetch % pwd
+/Users/samijabery/Desktop/Information-Security/Lab-11/neofetch
+samijabery@Samis-MacBook-Pro neofetch % cd ..
+samijabery@Samis-MacBook-Pro Lab-11 % youtube-dl --version
+2025.04.07
+samijabery@Samis-MacBook-Pro Lab-11 % youtube-dl https://youtu.be/jDfvAMK4Q0A?si=1IJVlDtjv0jEAdmS
+zsh: no matches found: https://youtu.be/jDfvAMK4Q0A?si=1IJVlDtjv0jEAdmS
+samijabery@Samis-MacBook-Pro Lab-11 % youtube-dl https://www.youtube.com/watch?v=dQw4w9WgXcQ
+zsh: no matches found: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+samijabery@Samis-MacBook-Pro Lab-11 % youtube-dl "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+[youtube] dQw4w9WgXcQ: Downloading webpage
+WARNING: [youtube] Unable to download webpage: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+WARNING: [youtube] Cannot extract signature timestamp without player url
+[youtube] dQw4w9WgXcQ: Downloading ANDROID API JSON
+WARNING: [youtube] Unable to download API page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+ERROR: No video formats found; please report this issue on https://github.com/ytdl-org/youtube-dl/issues , using the appropriate issue template. Make sure you are using the latest version; see  https://github.com/ytdl-org/youtube-dl/#user-content-installation  on how to update. Be sure to call youtube-dl with the --verbose option and include the complete output.
+samijabery@Samis-MacBook-Pro Lab-11 % git clone https://github.com/yt-dlp/yt-dlp.git
+cd yt-dlp
+Cloning into 'yt-dlp'...
+remote: Enumerating objects: 131352, done.
+remote: Counting objects: 100% (46/46), done.
+remote: Compressing objects: 100% (39/39), done.
+remote: Total 131352 (delta 26), reused 7 (delta 7), pack-reused 131306 (from 2
+Receiving objects: 100% (131352/131352), 58.95 MiB | 559.00 KiB/s, done.
+Resolving deltas: 100% (102685/102685), done.
+samijabery@Samis-MacBook-Pro yt-dlp % python3 yt_dlp/__main__.py --version
+2026.02.21
+samijabery@Samis-MacBook-Pro yt-dlp % python3 yt_dlp/__main__.py "https://youtu.be/jDfvAMK4Q0A?si=X3jk2rC0pSSqyZXH"
+[youtube] Extracting URL: https://youtu.be/jDfvAMK4Q0A?si=X3jk2rC0pSSqyZXH
+[youtube] jDfvAMK4Q0A: Downloading webpage
+WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+[youtube] jDfvAMK4Q0A: Downloading android vr player API JSON
+WARNING: ffmpeg not found. The downloaded format may not be the best available. Installing ffmpeg is strongly recommended: https://github.com/yt-dlp/yt-dlp#dependencies
+[info] jDfvAMK4Q0A: Downloading 1 format(s): 18
+[download] Destination: Reza Pahlavi on the future of Iran [jDfvAMK4Q0A].mp4
+[download] 100% of   28.30MiB in 00:00:37 at 778.70KiB/s
+samijabery@Samis-MacBook-Pro yt-dlp % cd ..
+samijabery@Samis-MacBook-Pro Lab-11 % 
