@@ -1,0 +1,62 @@
+Last login: Mon Mar  2 12:47:48 on ttys001
+You have new mail.
+samijabery@Samis-MacBook-Pro ~ % cd ~/Desktop/Information-Security
+mkdir Lab-10
+cd Lab-10
+samijabery@Samis-MacBook-Pro Lab-10 % pwd
+/Users/samijabery/Desktop/Information-Security/Lab-10
+samijabery@Samis-MacBook-Pro Lab-10 % brew install nginx
+✔︎ JSON API formula.jws.json                          Downloaded   31.9MB/ 31.9MB
+✔︎ JSON API cask.jws.json                             Downloaded   15.3MB/ 15.3MB
+==> Fetching downloads for: nginx
+✔︎ Bottle Manifest nginx (1.29.5)                     Downloaded   11.3KB/ 11.3KB
+✔︎ Bottle nginx (1.29.5)                              Downloaded    1.5MB/  1.5MB
+==> Pouring nginx--1.29.5.arm64_tahoe.bottle.1.tar.gz
+==> Caveats
+Docroot is: /opt/homebrew/var/www
+
+The default port has been set in /opt/homebrew/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /opt/homebrew/etc/nginx/servers/.
+
+To start nginx now and restart at login:
+  brew services start nginx
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/nginx/bin/nginx -g daemon\ off\;
+==> Summary
+🍺  /opt/homebrew/Cellar/nginx/1.29.5: 27 files, 2.6MB
+==> Running `brew cleanup nginx`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+samijabery@Samis-MacBook-Pro Lab-10 % brew services start nginx
+==> Successfully started `nginx` (label: homebrew.mxcl.nginx)
+samijabery@Samis-MacBook-Pro Lab-10 % ps aux | grep nginx
+samijabery       90216   0.0  0.0 435300032   1328 s000  S+    1:03PM   0:00.01 grep nginx
+samijabery       90214   0.0  0.0 435312048    592   ??  S     1:03PM   0:00.00 nginx: worker process  
+samijabery       90208   0.0  0.0 435315872   4032   ??  S     1:03PM   0:00.04 nginx: master process /opt/homebrew/opt/nginx/bin/nginx -g daemon off;  
+samijabery@Samis-MacBook-Pro Lab-10 % mkdir -p ~/Desktop/Information-Security/Lab-10/www
+vim ~/Desktop/Information-Security/Lab-10/www/my_site.html 
+samijabery@Samis-MacBook-Pro Lab-10 % vim /opt/homebrew/etc/nginx/nginx.conf
+samijabery@Samis-MacBook-Pro Lab-10 % ls
+www
+samijabery@Samis-MacBook-Pro Lab-10 % mkdir -p /opt/homebrew/etc/nginx/servers
+samijabery@Samis-MacBook-Pro Lab-10 % vim /opt/homebrew/etc/nginx/servers/my_site.conf
+samijabery@Samis-MacBook-Pro Lab-10 % mkdir -p ~/Desktop/Information-Security/Lab-10/www
+vim ~/Desktop/Information-Security/Lab-10/www/my_site.html
+samijabery@Samis-MacBook-Pro Lab-10 % nginx -t
+brew services restart nginx
+nginx: [warn] conflicting server name "localhost" on 0.0.0.0:8080, ignored
+nginx: the configuration file /opt/homebrew/etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /opt/homebrew/etc/nginx/nginx.conf test is successful
+Stopping `nginx`... (might take a while)
+==> Successfully stopped `nginx` (label: homebrew.mxcl.nginx)
+==> Successfully started `nginx` (label: homebrew.mxcl.nginx)
+samijabery@Samis-MacBook-Pro Lab-10 % http://localhost:8080
+zsh: no such file or directory: http://localhost:8080
+samijabery@Samis-MacBook-Pro Lab-10 % vim /opt/homebrew/etc/nginx/servers/my_site.conf                     
+samijabery@Samis-MacBook-Pro Lab-10 % ls
+www
+samijabery@Samis-MacBook-Pro Lab-10 % vim /opt/homebrew/etc/nginx/nginx.conf  
+samijabery@Samis-MacBook-Pro Lab-10 % vim ~/Desktop/Information-Security/Lab-10/www/my_site.html 
+samijabery@Samis-MacBook-Pro Lab-10 % 
