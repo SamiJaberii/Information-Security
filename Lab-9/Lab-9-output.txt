@@ -1,0 +1,192 @@
+Last login: Mon Mar  2 12:30:06 on ttys001
+samijabery@Samis-MacBook-Pro Lab-9 % brew --version
+Homebrew 5.0.15
+samijabery@Samis-MacBook-Pro Lab-9 % brew search nginx
+==> Formulae
+nginx ✔
+samijabery@Samis-MacBook-Pro Lab-9 % brew info nginx
+==> nginx ✔: stable 1.29.5 (bottled), HEAD
+HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+https://nginx.org/
+Installed
+/opt/homebrew/Cellar/nginx/1.29.5 (27 files, 2.6MB) *
+  Poured from bottle using the formulae.brew.sh API on 2026-03-02 at 12:37:44
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/n/nginx.rb
+License: BSD-2-Clause
+==> Dependencies
+Required: openssl@3 ✔, pcre2 ✔
+==> Options
+--HEAD
+	Install HEAD version
+==> Caveats
+Docroot is: /opt/homebrew/var/www
+
+The default port has been set in /opt/homebrew/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /opt/homebrew/etc/nginx/servers/.
+
+To start nginx now and restart at login:
+  brew services start nginx
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/nginx/bin/nginx -g daemon\ off\;
+==> Analytics
+install: 10,069 (30 days), 28,282 (90 days), 136,987 (365 days)
+install-on-request: 10,027 (30 days), 28,176 (90 days), 136,709 (365 days)
+build-error: 2 (30 days)
+samijabery@Samis-MacBook-Pro Lab-9 % brew install nginx
+✔︎ JSON API cask.jws.json                             Downloaded   15.3MB/ 15.3MB
+✔︎ JSON API formula.jws.json                          Downloaded   31.9MB/ 31.9MB
+Warning: nginx 1.29.5 is already installed and up-to-date.
+To reinstall 1.29.5, run:
+  brew reinstall nginx
+samijabery@Samis-MacBook-Pro Lab-9 % brew services start nginx
+==> Successfully started `nginx` (label: homebrew.mxcl.nginx)
+samijabery@Samis-MacBook-Pro Lab-9 % ps aux | grep nginx
+samijabery       89051   0.0  0.0 410059936    176 s001  R+   12:49PM   0:00.00 grep nginx
+samijabery       89045   0.0  0.0 435312048    576   ??  S    12:49PM   0:00.00 nginx: worker process  
+samijabery       89042   0.0  0.0 435315696   4000   ??  S    12:49PM   0:00.04 nginx: master process /opt/homebrew/opt/nginx/bin/nginx -g daemon off;  
+samijabery@Samis-MacBook-Pro Lab-9 % brew services stop nginx
+Stopping `nginx`... (might take a while)
+==> Successfully stopped `nginx` (label: homebrew.mxcl.nginx)
+samijabery@Samis-MacBook-Pro Lab-9 % brew uninstall nginx
+Uninstalling /opt/homebrew/Cellar/nginx/1.29.5... (27 files, 2.6MB)
+
+Warning: The following nginx configuration files have not been removed!
+If desired, remove them manually with `rm -rf`:
+  /opt/homebrew/etc/nginx
+  /opt/homebrew/etc/nginx/fastcgi.conf
+  /opt/homebrew/etc/nginx/fastcgi.conf.default
+  /opt/homebrew/etc/nginx/fastcgi_params
+  /opt/homebrew/etc/nginx/fastcgi_params.default
+  /opt/homebrew/etc/nginx/koi-utf
+  /opt/homebrew/etc/nginx/koi-win
+  /opt/homebrew/etc/nginx/mime.types
+  /opt/homebrew/etc/nginx/mime.types.default
+  /opt/homebrew/etc/nginx/nginx.conf
+  /opt/homebrew/etc/nginx/nginx.conf.default
+  /opt/homebrew/etc/nginx/scgi_params
+  /opt/homebrew/etc/nginx/scgi_params.default
+  /opt/homebrew/etc/nginx/servers
+  /opt/homebrew/etc/nginx/uwsgi_params
+  /opt/homebrew/etc/nginx/uwsgi_params.default
+  /opt/homebrew/etc/nginx/win-utf
+samijabery@Samis-MacBook-Pro Lab-9 % cat /opt/homebrew/etc/nginx/nginx.conf
+ls /opt/homebrew/var/www
+
+#user  nobody;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    server {
+        listen       8080;
+        server_name  localhost;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+    include servers/*;
+}
+50x.html	index.html
+samijabery@Samis-MacBook-Pro Lab-9 % 
