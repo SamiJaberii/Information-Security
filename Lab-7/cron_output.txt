@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
+    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
+Traceback (most recent call last):
+  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
+    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
+Traceback (most recent call last):
+  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
+    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
+Traceback (most recent call last):
+  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
+    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
+Cron ran at 2026-03-02 11:28:01.196804
+Cron ran at 2026-03-02 11:29:00.488470
+Cron ran at 2026-03-02 11:30:00.785894
+Cron ran at 2026-03-02 11:31:01.132086
+Cron ran at 2026-03-02 11:32:00.416035
+Cron ran at 2026-03-02 11:33:00.721784
+Cron ran at 2026-03-02 11:34:00.993234
+Cron ran at 2026-03-02 11:35:00.229876
+Cron ran at 2026-03-02 11:36:01.395972
+Cron ran at 2026-03-02 11:37:00.616054
+Cron ran at 2026-03-02 11:38:00.821540
+Cron ran at 2026-03-02 11:39:01.163692
+Cron ran at 2026-03-02 11:39:48.301440
+Cron ran at 2026-03-02 11:40:00.380513
+Cron ran at 2026-03-02 11:41:00.567502
+Cron ran at 2026-03-02 11:42:01.660901
+Cron ran at 2026-03-02 11:42:15.947200
+Cron ran at 2026-03-02 11:43:01.461454
+Cron ran at 2026-03-02 11:44:00.695293
+Cron ran at 2026-03-02 11:45:01.050838
