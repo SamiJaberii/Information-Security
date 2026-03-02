@@ -1,0 +1,44 @@
+Script started on Mon Mar  2 11:04:14 2026
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Samis-MacBook-Pro.local/Users/samijabery/Desktop/Information-Security/Lab-6[0m[27m[24m[Jsamijabery@Samis-MacBook-Pro Lab-6 % [K[?2004h[7mtouch file.txt[27m
+[7mls -la[27m[K
+[7mchmod 754 file.txt[27m[K
+[7mls -la[27m[K
+[7msudo chown labuser file.txt[27m[K
+[7mls -la[27m[K
+[7msudo chmod 700 file.txt[27m[K
+[7mls -la[27m[K
+[7msudo -u labuser cat file.txt[27m[K
+[7mcat file.txt[27m[K
+[7mexit[27m[K[10A[33C[27mt[27mo[27mu[27mc[27mh[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27ml[27ms[27m [27m-[27ml[27ma[1B[27mc[27mh[27mm[27mo[27md[27m [27m7[27m5[27m4[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27ml[27ms[27m [27m-[27ml[27ma[1B[27ms[27mu[27md[27mo[27m [27mc[27mh[27mo[27mw[27mn[27m [27ml[27ma[27mb[27mu[27ms[27me[27mr[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27ml[27ms[27m [27m-[27ml[27ma[1B[27ms[27mu[27md[27mo[27m [27mc[27mh[27mm[27mo[27md[27m [27m7[27m0[27m0[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27ml[27ms[27m [27m-[27ml[27ma[1B[27ms[27mu[27md[27mo[27m [27m-[27mu[27m [27ml[27ma[27mb[27mu[27ms[27me[27mr[27m [27mc[27ma[27mt[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27mc[27ma[27mt[27m [27mf[27mi[27ml[27me[27m.[27mt[27mx[27mt[1B[27me[27mx[27mi[27mt[?2004l
+touch: file.txt: Permission denied
+total 16
+drwxr-xr-x@  4 samijabery  staff  128 Mar  2 11:04 .
+drwxr-xr-x  11 samijabery  staff  352 Mar  2 11:04 ..
+-rw-r--r--   1 samijabery  staff   43 Mar  2 11:04 Lab-6-output.txt
+-rwx------   1 labuser     staff   16 Mar  2 11:01 file.txt
+chmod: Unable to change file mode on file.txt: Operation not permitted
+total 16
+drwxr-xr-x@  4 samijabery  staff  128 Mar  2 11:04 .
+drwxr-xr-x  11 samijabery  staff  352 Mar  2 11:04 ..
+-rw-r--r--   1 samijabery  staff   43 Mar  2 11:04 Lab-6-output.txt
+-rwx------   1 labuser     staff   16 Mar  2 11:01 file.txt
+Password:
+total 16
+drwxr-xr-x@  4 samijabery  staff   128 Mar  2 11:04 .
+drwxr-xr-x  11 samijabery  staff   352 Mar  2 11:04 ..
+-rw-r--r--@  1 samijabery  staff  2195 Mar  2 11:04 Lab-6-output.txt
+-rwx------   1 labuser     staff    16 Mar  2 11:01 file.txt
+total 16
+drwxr-xr-x@  4 samijabery  staff   128 Mar  2 11:04 .
+drwxr-xr-x  11 samijabery  staff   352 Mar  2 11:04 ..
+-rw-r--r--@  1 samijabery  staff  2195 Mar  2 11:04 Lab-6-output.txt
+-rwx------   1 labuser     staff    16 Mar  2 11:01 file.txt
+Hello from Sami
+cat: file.txt: Permission denied
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Mon Mar  2 11:05:14 2026
