@@ -1,23 +1,3 @@
-Traceback (most recent call last):
-  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
-    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
-Traceback (most recent call last):
-  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
-    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
-Traceback (most recent call last):
-  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
-    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
-Traceback (most recent call last):
-  File "/Users/samijabery/Desktop/Information-Security/Lab-7/test_cron.py", line 4, in <module>
-    with open("/Users/samijabery/Lab-7/cron_output.txt", "a") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/samijabery/Lab-7/cron_output.txt'
 Cron ran at 2026-03-02 11:28:01.196804
 Cron ran at 2026-03-02 11:29:00.488470
 Cron ran at 2026-03-02 11:30:00.785894
@@ -38,3 +18,4 @@ Cron ran at 2026-03-02 11:42:15.947200
 Cron ran at 2026-03-02 11:43:01.461454
 Cron ran at 2026-03-02 11:44:00.695293
 Cron ran at 2026-03-02 11:45:01.050838
+Cron ran at 2026-03-02 11:46:00.296659
