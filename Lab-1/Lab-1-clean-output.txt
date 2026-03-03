@@ -1,0 +1,37 @@
+Lab 1 – UNIX Terminal Commands
+
+1) Create directories and file:
+mkdir my_dir
+cd my_dir
+touch my_file.txt
+chmod 777 my_file.txt
+cd ..
+
+2) Create another directory and copy file:
+mkdir another_dir
+cp my_dir/my_file.txt another_dir/
+
+3) Create two directories and move files:
+mkdir dir1 dir2
+cd dir1
+touch file1.txt file2.txt
+chmod 777 file1.txt file2.txt
+cd ..
+mv dir1/* dir2/
+
+4) Use curl:
+curl https://jsonplaceholder.typicode.com/posts
+curl -o filename.json https://jsonplaceholder.typicode.com/posts
+curl -I https://jsonplaceholder.typicode.com/posts
+curl -X POST -H "Content-Type: application/json" \
+-d '{"title":"foo","body":"bar","userId":1}' \
+https://jsonplaceholder.typicode.com/posts
+
+5) Use tar:
+tar -czf posts_backup.tar.gz filename.json
+tar -tzf posts_backup.tar.gz
+tar -xzf posts_backup.tar.gz
+
+6) Verify files:
+ls
+pwd
