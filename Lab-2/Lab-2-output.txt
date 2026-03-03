@@ -1,0 +1,5 @@
+Hello, samijabery!
+Current time: 00:00
+Work day ends after 18 hours and 0 minutes.
+The word "hello" appears        3 times.
+Deleted: test_dir/empty1.txt
