@@ -1,0 +1,10 @@
+========================================
+Run Time: 2026-03-03 23:46:02
+Input Date: 2024-01-01
+No files or folders older than this date.
+========================================
+Run Time: 2026-03-03 23:46:09
+Input Date: 2025-01-01
+No files or folders older than this date.
+========================================
+Session ended: 2026-03-03 23:46:14
