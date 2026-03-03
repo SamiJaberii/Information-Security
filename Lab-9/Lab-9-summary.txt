@@ -1,0 +1,13 @@
+Lab 9 – Package Management (Homebrew)
+
+Actions performed:
+- Verified Homebrew installation
+- Searched for nginx package
+- Installed nginx
+- Started nginx service
+- Verified running process
+- Stopped nginx service
+- Uninstalled nginx
+- Inspected configuration file
+
+All commands executed successfully.
