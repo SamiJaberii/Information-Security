@@ -1,0 +1,24 @@
+Lab 5 - User Management (macOS)
+
+1) Created group:
+sudo dseditgroup -o create labgroup
+dscl . -read /Groups/labgroup
+
+2) Created user:
+sudo sysadminctl -addUser labuser -fullName "SamiJaberi" -password "********"
+dscl . -read /Users/labuser RecordName UniqueID PrimaryGroupID NFSHomeDirectory UserShell
+
+3) Added user to group + verified:
+sudo dseditgroup -o edit -a labuser -t user labgroup
+dscl . -read /Groups/labgroup GroupMembership
+su - labuser
+whoami
+groups
+
+4) Delete user + verify:
+sudo sysadminctl -deleteUser labuser
+dscl . -read /Users/labuser   (should show: No such key / not found)
+
+5) Delete group + verify:
+sudo dseditgroup -o delete labgroup
+dscl . -read /Groups/labgroup (should show: not found)
