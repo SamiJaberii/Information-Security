@@ -1,0 +1,27 @@
+Lab 6 – Permissions in Linux (macOS environment)
+
+1) Create file:
+touch file.txt
+echo "Hello from Sami" > file.txt
+
+2) Check default permissions:
+ls -la file.txt
+
+3) Change permissions:
+chmod 754 file.txt
+ls -la file.txt
+
+4) Change owner:
+sudo chown labuser file.txt
+ls -la file.txt
+
+5) Restrict access:
+sudo chmod 700 file.txt
+ls -la file.txt
+
+6) Test access as another user:
+sudo -u labuser cat file.txt
+cat file.txt
+
+Result:
+Permission denied when unauthorized user tries to read file.
