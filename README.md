@@ -42,7 +42,7 @@ This repository contains the following completed labs:
 
 ## ✍️ Student Information
 
-**Name:** Sami Jaberi  
+**Name:** Sami Jaberi
 **University:** American University of Central Asia (AUCA)  
 **Course Code:** COM-424.1  
 **Semester:** Spring 2026  
