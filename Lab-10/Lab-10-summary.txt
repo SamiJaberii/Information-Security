@@ -1,0 +1,13 @@
+Lab 10 – NGINX Configuration
+
+Actions performed:
+- Installed nginx
+- Started service
+- Created custom document root
+- Created custom server block
+- Configured port 8080
+- Served custom HTML page
+- Verified configuration with nginx -t
+- Restarted nginx service
+
+Server tested successfully at http://localhost:8080
